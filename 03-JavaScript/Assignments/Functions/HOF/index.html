@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //hof
+        function displayUserDetails(details,name,age,sal){
+            return details(name,age,sal)
+        }
+
+        function SoftwareEng(name,age,sal){
+            console.log("Name: "+name+" age: "+age+" salary: "+sal);
+        }
+
+        function TestEng(name,age,sal){
+            console.log("Name: "+name+" age: "+age+" salary: "+sal);
+        }
+
+        displayUserDetails(SoftwareEng,"Piyush",22,57000)
+        
+
+    </script>
+</body>
+</html>
