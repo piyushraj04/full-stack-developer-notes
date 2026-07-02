@@ -10,6 +10,11 @@ public class Square {
         int no = sc.nextInt();
         Square sq = new Square();
         System.out.println(sq.square(no));
+
+        System.out.println("Entered the char: ");
+        char ch = sc.next().charAt(0);
+        System.out.println(ch);
+
         sc.close();
     }
     
