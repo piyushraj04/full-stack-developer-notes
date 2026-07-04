@@ -65,6 +65,65 @@ let valueInString = String(someNum)
 
 
 
+// ***************************************----Operations------********************************
+
+// console.log(+true);
+// console.log("10"===10); //false
+
+// console.log(1+1+"1");
+
+// ****---Null comparison------*****
+// console.log(null==0);
+// console.log(null>0);
+// console.log(null<0);
+// console.log(null<=NaN);
+
+// console.log(null>=0)//true
+// console.log(null<=0);//true
+// console.log(null == undefined); // true
+
+/*
+Easy way to remember for interviews
+Expression	Result	Reason
+null == 0	false	== does not convert null to 0
+null > 0	false	null converts to 0, 0 > 0
+null < 0	false	null converts to 0, 0 < 0
+null >= 0	true	!(null < 0)
+null <= 0	true	!(null > 0)
+
+*/
+
+// ****---Undefined comparison------*****
+// console.log(undefined==0);
+// console.log(undefined>0);
+// console.log(undefined<0);
+// console.log(undefined<=NaN);
+// console.log(undefined>=0)//
+// console.log(undefined==NaN);
+// console.log(undefined<=0);//
+
+// console.log(undefined==null); //true
+// console.log(undefined == undefined); // true
+
+
+/**
+ * bcz:-
+ Number(undefined) : becomes: NaN
+and any comparison with NaN is always false.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
