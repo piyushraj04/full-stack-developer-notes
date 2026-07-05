@@ -21,6 +21,71 @@
         }
 
         displayUserDetails(SoftwareEng,"Piyush",22,57000)
+
+        console.log("------------------------------------------");
+
+        function calculate(operation,a,b){
+            return operation(a,b)
+        }
+
+        calculate((a,b)=> console.log("Sum is: "+(a+b)),10,20)
+
+        calculate((a,b)=> console.log("sub: "+(a-b)),20,10)
+
+
+        console.log("------------------------------------------");
+
+        function parent(){
+            let count = 0;
+            console.log("Parent func");
+            
+            function child(){
+                count++;
+                return count;
+                
+            }
+           return child
+        }
+       let counter = parent();
+       console.log( counter());
+       console.log( counter());
+       console.log( counter());
+       
+
+       console.log("------------------------------------------");
+
+
+       function generateOTP(){
+        let otp = Math.floor(Math.random()*10000)
+
+        console.log(otp);
+        
+        let userOTP = Number(prompt("Enter OTP "))
+
+        function validateOTP(){
+            if(userOTP==otp){
+                alert("otp verified")
+            }
+            else{
+                alert("Wrong otp...try again")
+            }
+        }
+        validateOTP()
+       }
+       generateOTP()
+        
+    
+        
+        
+        
+
+
+
+
+
+        
+
+        
         
 
     </script>

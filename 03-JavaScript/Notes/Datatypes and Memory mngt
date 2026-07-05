@@ -1,0 +1,472 @@
+1. What is a Data Type?
+
+A data type tells JavaScript what kind of value is being stored and how that value should be handled.
+
+let age = 23;        // Number
+let name = "Piyush"; // String
+let isPlaced = true; // Boolean
+
+JavaScript is a dynamically typed language, which means a variable can hold different types of values at different times.
+
+let x = 10;      // Number
+x = "Hello";     // String
+x = true;        // Boolean
+2. Categories of Data Types
+
+JavaScript data types are divided into two categories:
+
+Data Types
+    |
+    +---- Primitive
+    |
+    +---- Non-Primitive (Reference)
+3. Primitive Data Types
+
+Primitive values are:
+
+Immutable
+Stored by value
+Usually stored directly in stack memory
+
+There are 7 primitive data types.
+
+Data Type	Example
+Number	10, 20.5
+String	"Hello"
+Boolean	true, false
+Undefined	undefined
+Null	null
+BigInt	123n
+Symbol	Symbol()
+A. Number
+
+JavaScript has only one numeric type.
+
+let a = 10;
+let b = 20.5;
+let c = -100;
+
+Unlike Java:
+
+int a = 10;
+double b = 20.5;
+
+JavaScript internally stores all normal numbers as 64-bit floating point values (IEEE-754).
+
+console.log(typeof 10);     // number
+console.log(typeof 20.5);   // number
+B. String
+
+Strings represent text.
+
+let name = "Piyush";
+let city = 'Jaipur';
+let msg = `Hello`;
+
+Strings are immutable.
+
+let s = "Hello";
+
+s[0] = 'Y';
+
+console.log(s); // Hello
+C. Boolean
+
+Represents logical values.
+
+let isStudent = true;
+let isPlaced = false;
+D. Undefined
+
+A variable declared but not assigned.
+
+let x;
+
+console.log(x); // undefined
+E. Null
+
+Represents intentional absence of value.
+
+let user = null;
+
+Funny JavaScript behavior:
+
+console.log(typeof null);
+
+Output:
+
+"object"
+
+This is a historical bug in JavaScript.
+
+F. BigInt
+
+Used for very large integers.
+
+let x = 123456789012345678901234567890n;
+
+Example:
+
+console.log(typeof x);
+// bigint
+G. Symbol
+
+Creates unique values.
+
+let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+console.log(id1 === id2);
+
+Output:
+
+false
+
+Each Symbol is always unique.
+
+4. Non-Primitive (Reference) Types
+
+Everything except primitives is an object.
+
+Examples:
+
+Object
+Array
+Function
+Date
+Map
+Set
+RegExp
+
+Example:
+
+let person = {
+    name: "Piyush",
+    age: 23
+};
+
+let arr = [10,20,30];
+
+function test(){
+}
+5. Primitive vs Reference Types
+Primitive	Reference
+Stored by value	Stored by reference
+Immutable	Mutable
+Stack	Heap
+Fixed size	Dynamic size
+Independent copy	Shared reference
+6. JavaScript Memory Model
+
+JavaScript mainly uses two memory areas:
+
+Memory
+   |
+   +---- Stack Memory
+   |
+   +---- Heap Memory
+7. Stack Memory
+
+Stack stores:
+
+Primitive values
+Function calls
+Execution contexts
+References to objects
+
+Example:
+
+let a = 10;
+let b = a;
+
+Memory:
+
+STACK
+
+a ----> 10
+b ----> 10
+
+Changing one doesn't affect the other.
+
+b = 20;
+
+console.log(a); //10
+console.log(b); //20
+8. Heap Memory
+
+Heap stores:
+
+Objects
+Arrays
+Functions
+
+Example:
+
+let obj = {
+    name: "Piyush"
+};
+
+Memory:
+
+STACK                HEAP
+
+obj ----------->   {
+                     name:"Piyush"
+                   }
+9. Copying Primitive Values
+let x = 10;
+let y = x;
+
+y = 20;
+
+Memory:
+
+STACK
+
+x ---> 10
+y ---> 20
+
+Output:
+
+10
+20
+10. Copying Objects
+let a = {
+    name:"Piyush"
+};
+
+let b = a;
+
+Memory:
+
+STACK              HEAP
+
+a -----------+
+             |
+b -----------+----> {
+                     name:"Piyush"
+                   }
+
+Now:
+
+b.name = "Raj";
+
+console.log(a.name);
+
+Output:
+
+Raj
+
+Because both variables point to the same object.
+
+11. Shallow Copy
+let obj1 = {
+    name:"Piyush"
+};
+
+let obj2 = {...obj1};
+
+Memory:
+
+obj1 ---> Object1
+obj2 ---> Object2
+
+Top-level properties are copied.
+
+Problem with Nested Objects
+let obj1 = {
+    name:"Piyush",
+    address:{
+        city:"Jaipur"
+    }
+};
+
+let obj2 = {...obj1};
+
+obj2.address.city = "Delhi";
+
+Result:
+
+console.log(obj1.address.city);
+
+Output:
+
+Delhi
+
+Because nested objects still share references.
+
+12. Deep Copy
+
+Methods:
+
+JSON method
+let copy =
+JSON.parse(JSON.stringify(obj));
+structuredClone()
+let copy =
+structuredClone(obj);
+
+Modern and recommended.
+
+13. Function Memory
+function test(){
+    let x = 10;
+}
+
+When called:
+
+test();
+
+JavaScript creates an Execution Context.
+
+Call Stack
+
+Global
+test()
+
+After execution:
+
+Call Stack
+
+Global
+
+The function memory is destroyed.
+
+14. Execution Context
+
+Every execution creates:
+
+Variable Environment
+Scope Chain
+This binding
+
+Example:
+
+function test(){
+    let a = 10;
+}
+
+test();
+
+Memory:
+
+Call Stack
+
+Global EC
+test EC
+
+After completion:
+
+Global EC
+15. Call Stack
+
+JavaScript is single-threaded.
+
+Example:
+
+function one(){
+    two();
+}
+
+function two(){
+    three();
+}
+
+function three(){
+    console.log("Hello");
+}
+
+one();
+
+Call stack:
+
+Global
+one()
+two()
+three()
+
+Then:
+
+Global
+16. Garbage Collection
+
+JavaScript automatically manages memory.
+
+It uses the Mark-and-Sweep Algorithm.
+
+Example:
+
+let obj = {
+    name:"Piyush"
+};
+
+obj = null;
+
+Now no variable references that object.
+
+Object becomes unreachable
+        ↓
+Garbage Collector removes it
+17. Memory Leak
+
+Occurs when objects remain referenced unnecessarily.
+
+Example:
+
+let cache = [];
+
+function add(){
+    cache.push(new Array(1000000));
+}
+
+Calling repeatedly:
+
+add();
+add();
+add();
+
+Memory keeps increasing.
+
+18. Pass By Value vs Pass By Reference
+
+Many students say:
+
+JavaScript uses pass by value for primitives and pass by reference for objects.
+
+This is not technically correct.
+
+JavaScript always uses pass by value.
+
+For objects, the value being passed is the reference itself.
+
+Example:
+
+let obj = {
+    age:20
+};
+
+function test(x){
+    x.age = 30;
+}
+
+test(obj);
+
+console.log(obj.age);
+
+Output:
+
+30
+
+Because the copied value is the object's reference.
+
+19. Type Checking
+typeof 10              // number
+typeof "abc"           // string
+typeof true            // boolean
+typeof undefined       // undefined
+typeof null            // object
+typeof Symbol()        // symbol
+typeof 10n             // bigint
+typeof {}              // object
+typeof []              // object
+typeof function(){}    // function

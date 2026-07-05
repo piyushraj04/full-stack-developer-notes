@@ -1,0 +1,584 @@
+Why is JavaScript called dynamically typed?
+Difference between primitive and non-primitive data types?
+Why does typeof null return "object"?
+Explain stack and heap memory.
+Explain shallow copy and deep copy.
+What is garbage collection?
+Explain mark-and-sweep algorithm.
+Is JavaScript pass by reference?
+Why are Symbols always unique?
+Explain memory leaks in JavaScript.
+Explain execution context and call stack.
+Why are strings immutable?
+Difference between null and undefined?
+Difference between == and ===?
+Explain object copying in JavaScript.
+
+
+------------------------------------------------
+
+
+
+1. Why is JavaScript called dynamically typed?
+
+A language is called dynamically typed when the type of a variable is determined at runtime, not at compile time.
+
+In Java, you must specify the type:
+
+int x = 10;
+x = "Hello"; // Compile-time error
+
+In JavaScript:
+
+let x = 10;       // number
+x = "Hello";      // string
+x = true;         // boolean
+
+Here, the variable x itself has no fixed type. Only the value has a type.
+
+Important clarification
+
+Many beginners think:
+
+"Variables have data types."
+
+In JavaScript, that's not true.
+
+Correct statement:
+
+Values have types, variables don't.
+
+2. Difference between primitive and non-primitive data types
+Primitive	Non-Primitive
+Stored by value	Stored by reference
+Immutable	Mutable
+Fixed size	Dynamic size
+Mostly stack	Heap
+Independent copy	Shared reference
+Primitive
+let a = 10;
+let b = a;
+
+b = 20;
+
+console.log(a); // 10
+
+Memory:
+
+a → 10
+b → 20
+Non-Primitive
+let a = {age:20};
+let b = a;
+
+b.age = 30;
+
+console.log(a.age); // 30
+
+Memory:
+
+a ----+
+      |
+b ----+----> {age:30}
+
+Both variables point to the same object.
+
+3. Why does typeof null return "object"?
+typeof null
+
+Output:
+
+"object"
+
+This is a historical bug from the first JavaScript implementation in 1995.
+
+Internally, values had binary tags:
+
+000 → object
+
+The internal representation of null accidentally received the same tag.
+
+Since millions of websites depended on this behavior, it could never be fixed.
+
+So:
+
+null instanceof Object
+
+Output:
+
+false
+
+Thus:
+
+null is NOT an object. typeof null === "object" is simply a legacy bug.
+
+4. Explain stack and heap memory
+
+JavaScript memory is broadly divided into:
+
+Memory
+   |
+   +--- Stack
+   |
+   +--- Heap
+Stack
+
+Stores:
+
+Primitive values
+References
+Function calls
+Execution contexts
+
+Example:
+
+let x = 10;
+STACK
+
+x → 10
+Heap
+
+Stores:
+
+Objects
+Arrays
+Functions
+
+Example:
+
+let person = {
+    name:"Piyush"
+};
+STACK                 HEAP
+
+person --------> {name:"Piyush"}
+Easy rule
+
+Stack stores "where".
+
+Heap stores "what".
+
+5. Explain shallow copy and deep copy
+Shallow Copy
+
+Copies only the first level.
+
+let obj1 = {
+    name:"Piyush",
+    address:{
+        city:"Jaipur"
+    }
+};
+
+let obj2 = {...obj1};
+
+Memory:
+
+obj1.address ----+
+                 |
+obj2.address ----+
+
+So:
+
+obj2.address.city = "Delhi";
+
+console.log(obj1.address.city);
+
+Output:
+
+Delhi
+Deep Copy
+
+Creates entirely separate objects.
+
+let obj2 =
+structuredClone(obj1);
+
+Now:
+
+obj1.address ---> Object1
+obj2.address ---> Object2
+
+Modification doesn't affect the original.
+
+6. What is garbage collection?
+
+Garbage collection is the process of:
+
+Automatically removing unused objects from memory.
+
+Example:
+
+let user = {
+    name:"Piyush"
+};
+
+user = null;
+
+Now nobody references the object.
+
+So JavaScript removes it automatically.
+
+Without garbage collection:
+
+Memory usage
+↑
+↑
+↑
+↑
+Never decreases
+7. Explain Mark-and-Sweep algorithm
+
+JavaScript engines use the Mark-and-Sweep algorithm.
+
+Suppose:
+
+let a = {};
+let b = {};
+
+a.ref = b;
+b.ref = a;
+
+Later:
+
+a = null;
+b = null;
+
+Algorithm:
+
+Step 1: Mark
+
+Start from root objects:
+
+window
+global
+current execution
+
+Mark everything reachable.
+
+Step 2: Sweep
+
+Remove everything unmarked.
+
+Example:
+
+Reachable:
+   ✓ object1
+   ✓ object2
+
+Unreachable:
+   ✗ object3
+   ✗ object4
+
+Delete all unreachable objects.
+
+8. Is JavaScript pass by reference?
+
+This is one of the biggest interview traps.
+
+People say:
+
+Objects are pass by reference.
+
+This is technically incorrect.
+
+JavaScript is:
+
+Always pass by value.
+
+Example:
+
+let obj = {age:20};
+
+function test(x){
+    x.age = 30;
+}
+
+test(obj);
+
+What gets copied?
+
+obj ---> address 1000
+
+x ----> address 1000
+
+The value copied is the address itself.
+
+Hence:
+
+JavaScript uses pass-by-value of references.
+
+9. Why are Symbols always unique?
+let a = Symbol("id");
+let b = Symbol("id");
+
+console.log(a === b);
+
+Output:
+
+false
+
+Because Symbol was designed to create guaranteed unique identifiers.
+
+Internally:
+
+Symbol(id) → #101
+Symbol(id) → #102
+
+Even if descriptions match, identities differ.
+
+This avoids property name collisions.
+
+Example:
+
+const ID = Symbol();
+
+obj[ID] = 100;
+
+Nobody can accidentally overwrite it.
+
+10. Explain memory leaks
+
+A memory leak happens when:
+
+Memory is still referenced even though it is no longer needed.
+
+Example:
+
+let cache = [];
+
+function add(){
+    cache.push(new Array(1000000));
+}
+
+Repeated calls:
+
+add();
+add();
+add();
+
+Memory keeps increasing.
+
+Common causes:
+
+Global variables
+data = {};
+Event listeners
+button.addEventListener("click",fn);
+
+Never removed.
+
+Timers
+setInterval(()=>{
+},1000);
+
+Never cleared.
+
+Closures
+function outer(){
+    let huge = new Array(1000000);
+
+    return function(){
+        console.log(huge.length);
+    }
+}
+
+The closure prevents garbage collection.
+
+11. Explain execution context and call stack
+
+Every time code executes, JavaScript creates an Execution Context.
+
+Example:
+
+function greet(){
+    let name = "Piyush";
+}
+
+greet();
+
+Memory:
+
+Call Stack
+
+Global EC
+Greet EC
+
+After execution:
+
+Call Stack
+
+Global EC
+
+Example:
+
+function a(){
+    b();
+}
+
+function b(){
+    c();
+}
+
+function c(){
+}
+
+Call stack:
+
+Global
+a()
+b()
+c()
+
+After completion:
+
+Global
+
+This structure is called the Call Stack.
+
+12. Why are strings immutable?
+
+Immutable means:
+
+Cannot be changed after creation.
+
+Example:
+
+let str = "Hello";
+
+str[0] = "Y";
+
+console.log(str);
+
+Output:
+
+Hello
+
+JavaScript creates a new string instead.
+
+Reason:
+
+Faster optimization
+Memory sharing
+Security
+Predictable behavior
+
+Example:
+
+let a = "Hello";
+let b = a;
+
+Both may share the same memory safely because strings cannot change.
+
+13. Difference between null and undefined
+null	undefined
+Intentional empty value	Value not assigned
+Assigned by programmer	Assigned by JS
+Primitive	Primitive
+
+Example:
+
+let a;
+console.log(a);
+
+Output:
+
+undefined
+
+Example:
+
+let user = null;
+
+Meaning:
+
+Currently no user exists.
+14. Difference between == and ===
+Double Equals
+
+Performs type conversion.
+
+5 == "5"
+
+Output:
+
+true
+
+Because:
+
+"5" → 5
+Triple Equals
+
+No type conversion.
+
+5 === "5"
+
+Output:
+
+false
+
+Examples:
+
+null == undefined
+
+Output:
+
+true
+null === undefined
+
+Output:
+
+false
+
+Interview rule:
+
+Always prefer ===.
+
+15. Explain object copying in JavaScript
+
+There are three major ways.
+
+Reference Copy
+let a = {x:1};
+let b = a;
+
+Memory:
+
+a -----+
+       |
+b -----+----> object
+Shallow Copy
+let b = {...a};
+
+let b = Object.assign({},a);
+
+Creates a new top-level object.
+
+Deep Copy
+let b =
+structuredClone(a);
+
+Creates an entirely separate object graph.
+
+Final Interview Summary
+Question	One Line Answer
+Dynamic typing	Variables have no fixed type
+Primitive	Stored by value
+Non-primitive	Stored by reference
+typeof null	Historical bug
+Stack	Stores primitives and references
+Heap	Stores objects
+Shallow copy	Copies only first level
+Deep copy	Copies entire object graph
+Garbage collection	Removes unused memory
+Mark-sweep	Mark reachable, remove unreachable
+Pass by reference	No, JS is always pass by value
+Symbol	Always unique
+Memory leak	Unreleased memory
+Execution context	Environment of execution
+Call stack	Tracks function execution
+String immutable	Cannot modify existing string
+null	Intentional absence
+undefined	Missing value
+==	Type coercion
+===	Strict comparison
+Object copy	Reference, shallow, deep

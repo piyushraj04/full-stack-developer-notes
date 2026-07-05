@@ -1,0 +1,5 @@
+Q1.why not use var?
+
+"var is not deprecated in JavaScript, but it is generally avoided because it is function-scoped, allows redeclaration, and has confusing hoisting behavior. Modern JavaScript prefers let and const because they provide block scope and make code safer and more maintainable."
+
+
