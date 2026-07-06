@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #parent h1{
+            background-color: red;
+        }
+        #parent section h1{
+            background-color: black;
+            color: white;
+        } */
+
+        /* #parent>h1{
+            background-color: #e27979;
+            color: blue;
+        }
+
+        #parent>section>h1{
+            background-color: grey;
+        } */
+
+        
+          div>h1+button~p{
+            background-color: rgb(245, 229, 13);
+        }
+        div>h1+button+p{
+            background-color: green;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    
+        <div id="parent">
+            <h1>Hello</h1>
+            <section>
+                <h1>hello from grand child of parent</h1>
+            </section>
+        </div>
+      <div>
+        <h1>hello</h1>
+        <button>Click</button>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+        <p>hello</p>
+      </div>
+   
+</body>
+</html>
