@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(this);
+        function check(){
+            console.log(this);
+            
+        }
+
+        // check();
+
+        let checkArrow = () => console.log(this);
+        // checkArrow()
+
+        let user = {
+            userName : 'Piyush',
+            age : 22,
+            display : function (){
+                console.log(this);
+                
+            }, 
+            checkDisArrow: () => console.log(this)
+        }
+        // user.display()
+        // user.checkDisArrow()
+
+        console.log("------------------------------------------------");
+        let person = {
+            name : "Piyush",
+            age : 22,
+            email : "piyush@gmail.com"
+        }
+
+        function display (){
+            console.log(this);  
+        }
+
+
+        // display()
+
+        function addAddress(city,state,country){
+            console.log(this.name);
+            console.log(this.age);
+            console.log(this.email);
+            console.log(city);
+            console.log(state);
+            console.log(country);
+        }
+
+        // addAddress("Sitamarhi", "Bihar", "India")
+
+
+        //if we wantr to point to person object
+
+        //call--accepts multiple argemunts
+        // display.call(person,"benaglore","Karnataka","India")
+
+        //apply -- accepts 2 args -- 2nd one may be [arg1,arg2.....,argN]
+        // display.apply(person,["Ahemedabaad","Gujaraat","India"])
+        
+        //bind-- it will bind  and returns nre reference
+       let bindDisplay =  display.bind(person,"Mysuru","Karnataka","India")
+
+    //    bindDisplay()
+
+       let bindAddAddress = addAddress.bind(person,"Chennai","Tamilnadu","India")
+       bindAddAddress()
+     
+
+
+    </script>
+</body>
+</html>
