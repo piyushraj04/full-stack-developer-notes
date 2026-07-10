@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <h1 id = "title">Title</h1>
+        <p class = "para" id = "print">Lorem ipsum dolor sit amet.</p>
+        <p class = "para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, itaque?
+        </p>
+        <p class = "para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore soluta provident voluptas aliquid quas dolore.</p>
+        <p class = "para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto in totam commodi eaque praesentium. Dolor veritatis aperiam aut sequi quidem?</p>
+        <p class = "para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum explicabo amet, nihil dicta magnam asperiores? Nisi repudiandae ut ex provident quos, natus vitae tempora labore!</p>
+    </div>
+
+
+
+    <script>
+
+        let mainDiv = document.getElementById("mainDiv");
+        // console.log(mainDiv.textContent);
+
+        let print = document.getElementById("print");
+
+        // console.log(print.textContent)
+        // /.;
+        
+        let paras = document.getElementsByClassName("para");
+
+        // console.log(paras[0].textContent);
+
+        // let qSel = document.querySelector("#mainDiv");
+        //   let qSel = document.querySelector(".para");
+        //   let qSel = document.querySelector("p");
+        // console.log(qSel);
+
+        let qSelAll = document.querySelectorAll(".para")
+        console.log(qSelAll[0]);
+
+        qSelAll.backgroundColor = "red";
+
+        
+
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

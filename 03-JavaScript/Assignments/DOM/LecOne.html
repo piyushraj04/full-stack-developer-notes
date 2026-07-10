@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bodyClass">
+    <div id="mainDiv">
+        <h1 id="title" class = "titleClass">DOM Manipulation <span id="textCheck">Check text</span></h1>
+        <p id="name">Piyush Raj</p>
+    </div>
+    <script>
+
+        //getElementById
+        let bodyClass = document.getElementById("bodyClass");
+
+        //adding some styles
+        bodyClass.style.backgroundColor = "#212121";
+        bodyClass.style.color = "white";
+      
+        let title = document.getElementById("title");
+        console.log(title);
+        title.style.backgroundColor = "blue";
+          title.style.padding = "15px"
+        title.style.borderRadius = "55px";
+        
+        //fetching id and class 
+        console.log(title.id);
+        console.log(title.className);
+
+        //extracting content with dom
+        console.log(title.textContent);
+        console.log(title.innerHTML);
+        console.log(title.innerText);
+
+        let textCheck = document.getElementById("textCheck");
+        console.log(textCheck);
+        
+        
+        textCheck.style.display = "none";
+
+        console.log(title.innerText);
+        console.log(title.textContent);
+
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
