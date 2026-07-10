@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Piyush Raj | Java Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-surface text-on-surface scroll-smooth font-body-md overflow-x-hidden">
+
+<!-- Header -->
+<header class="sticky top-0 w-full glass-header bg-surface/90 z-50 border-b border-outline-variant">
+    <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 h-20">
+        <a class="font-bold text-2xl tracking-tighter text-primary" href="#">PIYUSH.DEV</a>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="text-primary font-bold border-b-2 border-primary py-2 nav-link" href="#projects">Projects</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors nav-link" href="#skills">Skills</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors nav-link" href="#experience">Experience</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors nav-link" href="#contact">Contact</a>
+        </nav>
+        <a href="mailto:piyush004.raj@gmail.com" class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-800 transition-all">
+            Hire Me
+        </a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-12 md:py-24 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <span class="text-blue-600 font-bold uppercase tracking-widest">Java Full Stack Developer</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-tight">
+                    Building Scalable Systems with <span class="text-primary">Java & React</span>
+                </h1>
+                <p class="text-lg text-gray-600 max-w-xl">
+                    Hi, I'm Piyush Raj. A Computer Science graduate specialized in Spring Boot, Hibernate, and modern web architectures. Transforming complex requirements into high-performance applications.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-4">
+                    <a class="bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition-all" href="#projects">View Projects</a>
+                    <a class="border border-primary text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all" href="#contact">Contact Me</a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="relative w-full aspect-square overflow-hidden rounded-2xl border-2 border-gray-200 p-4 bg-white shadow-2xl">
+                    <img class="w-full h-full object-cover rounded-xl" src="./MyPicResume.jpeg" alt="Tech Workspace">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl border shadow-lg hidden md:block">
+                    <span class="text-primary text-4xl font-bold">100+</span>
+                    <span class="block text-gray-500 text-sm font-bold uppercase">DSA Problems Solved</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold">Core Expertise</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-4">settings</span>
+                    <h3 class="text-xl font-bold mb-2">Backend Development</h3>
+                    <p class="text-gray-600">Expertise in Spring Boot, Spring Data JPA, and Hibernate for building robust microservices and REST APIs.</p>
+                </div>
+                <div class="bg-primary p-8 rounded-xl shadow-sm text-white">
+                    <span class="material-symbols-outlined text-4xl mb-4">layers</span>
+                    <h3 class="text-xl font-bold mb-2">Full Stack Architecture</h3>
+                    <p class="text-blue-100">Designing end-to-end applications using ReactJS frontend and Java-based backend systems.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-4xl text-primary mb-4">database</span>
+                    <h3 class="text-xl font-bold mb-2">Database Management</h3>
+                    <p class="text-gray-600">Proficient in MySQL, PostgreSQL, and Oracle SQL with a focus on optimized queries and CRUD operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="py-24" id="projects">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Project 1 -->
+                <div class="group">
+                    <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden mb-6 border">
+                        <img src="./SsOfHelpDeskFlowVerse.png" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs font-bold bg-blue-100 text-primary px-2 py-1 rounded">SPRING BOOT</span>
+                        <span class="text-xs font-bold bg-blue-100 text-primary px-2 py-1 rounded">REACT</span>
+                    </div>
+                    <h3 class="text-2xl font-bold">HelpDesk Flow Verse</h3>
+                    <p class="text-gray-600">A full-stack Helpdesk Management System with role-based access control and real-time ticket updates.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="group">
+                    <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden mb-6 border">
+                        <img src="./SsOfFoodieHub.png" class="w-full h-full object-cover group-hover:scale-105 transition-all">
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <span class="text-xs font-bold bg-blue-100 text-primary px-2 py-1 rounded">HIBERNATE</span>
+                        <span class="text-xs font-bold bg-blue-100 text-primary px-2 py-1 rounded">POSTGRESQL</span>
+                    </div>
+                    <h3 class="text-2xl font-bold">Food Order Management</h3>
+                    <p class="text-gray-600">Complex system managing customers, restaurants, and payments using JPA entity relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-24 bg-gray-50" id="skills">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Technical Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">JAVA</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">SPRING BOOT</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">REACT JS</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">MYSQL</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">HIBERNATE</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">JAVASCRIPT</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">GIT / GITHUB</div>
+                <div class="bg-white p-6 border text-center font-bold rounded hover:border-primary transition-all">POSTMAN</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="py-24" id="experience">
+        <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4">
+                <h2 class="text-4xl font-bold sticky top-32">Professional Journey</h2>
+            </div>
+            <div class="lg:col-span-8 border-l-2 border-gray-200 pl-8 space-y-12">
+                <div>
+                    <span class="text-primary font-bold">MAY 2025 — PRESENT</span>
+                    <h3 class="text-2xl font-bold">Software Development Intern</h3>
+                    <p class="text-blue-600 font-bold">JSpiders, Bengaluru</p>
+                    <p class="text-gray-600 mt-2">Developing backend modules and responsive user interfaces following OOP principles and SDLC practices.</p>
+                </div>
+                <div>
+                    <span class="text-primary font-bold">2023 — 2026</span>
+                    <h3 class="text-2xl font-bold">B.Tech in Computer Science</h3>
+                    <p class="text-blue-600 font-bold">Arya College of Engineering (GPA: 9.05)</p>
+                </div>
+                <div>
+                    <span class="text-primary font-bold">2020 — 2023</span>
+                    <h3 class="text-2xl font-bold">Diploma in Civil Engineering</h3>
+                    <p class="text-blue-600 font-bold">Dr. C V Raman University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-24 bg-primary text-white text-center" id="contact">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-8 uppercase">Let's Talk</h2>
+            <p class="text-xl mb-12 text-blue-100">Looking for a Full Stack Developer to join your team? I'm currently available for new opportunities.</p>
+            <a href="mailto:piyush004.raj@gmail.com" class="inline-block bg-white text-primary px-12 py-6 rounded-lg font-bold text-xl hover:bg-blue-50 transition-all">
+                piyush004.raj@gmail.com
+            </a>
+            <div class="flex justify-center gap-8 mt-12">
+                <a href="https://github.com/piyushraj04" class="font-bold hover:underline">GITHUB</a>
+                <a href="https://www.linkedin.com/in/piyush004-raj/" class="font-bold hover:underline">LINKEDIN</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-8 text-center text-gray-500 border-t">
+    <p>© 2024 Piyush Raj. Built with Passion & Code.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

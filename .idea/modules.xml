@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/05-Core-Java/04-Control-Statements/04-Control-Statements.iml" filepath="$PROJECT_DIR$/05-Core-Java/04-Control-Statements/04-Control-Statements.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-Core-Java/05-Core-Java.iml" filepath="$PROJECT_DIR$/05-Core-Java/05-Core-Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-Core-Java/07-OOP/07-OOP.iml" filepath="$PROJECT_DIR$/05-Core-Java/07-OOP/07-OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-DSA/11-DSA.iml" filepath="$PROJECT_DIR$/11-DSA/11-DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-Core-Java/07-OOP/Abstraction/Abstraction.iml" filepath="$PROJECT_DIR$/05-Core-Java/07-OOP/Abstraction/Abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/full-stack-developer-notes.iml" filepath="$PROJECT_DIR$/.idea/full-stack-developer-notes.iml" />
+    </modules>
+  </component>
+</project>
