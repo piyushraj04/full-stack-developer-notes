@@ -6,11 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+
     <button id="theme-btn" onclick="handleTheme()">Dark Mode</button>
     <h1>Events</h1>
     <p>Click Event</p>
     <button onclick="handleClickPara()">click</button>
 
+    <hr>
+
+    <button onclick="decrease()">-</button>
+    <span id="counter">0</span>
+    <button onclick="increase()">+</button>
+
+    <hr>
+
+    <img src="./Rajjj (1).jpg" alt="" height="250px" ondblclick="likeCount()">
+    <br>
+    <span id="likes">❤️</span>
+    <hr>
+    
     <script>
         let pTag = document.querySelector("p");
         function handleClickPara(){
@@ -32,6 +46,21 @@
                 themeBtn.textContent = "Dark Mode"
             }
         }
+
+        let counterTag = document.getElementById("counter");
+        let count = 0 ;
+        let increase = () => counterTag.innerHTML=++count;
+        let decrease = () => (count>0)?counterTag.innerHTML=--count:count=0;
+       
+    
+        let like = 0;
+        let likes = document.getElementById("likes")
+        function likeCount(){
+            // document.getElementById("likes").textContent = `❤️${likes++}`;
+            likes.textContent = `❤️${++like}`; 
+        }
+
+         
 
     </script>
 </body>
