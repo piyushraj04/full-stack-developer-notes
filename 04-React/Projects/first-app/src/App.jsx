@@ -1,8 +1,14 @@
 import React from 'react'
 import './App.css'
+import FirstFunc from './Components/FunctionalComp'
 
 function App() {
  
+  const user = "Piyush"
+  let myStyle = {
+    color:"indigo",
+    fontSize:"4.5rem"
+  }
 
   return (
     //Without jsx
@@ -10,10 +16,21 @@ function App() {
     
 
     //with jsx
-    <div id="wrap">
-      <h1>This is h1 inside wrapper box</h1>
-    </div>
+    // <div id="wrap">
+    //   {/* Attribute value as string literals */}
+    //   <h1 className = "primary-heading">This is h1 inside wrapper box</h1>
+  
+    //    {/* Attribute value as js expression*/}
+    //   <h2 style={{color:"red"}}>My name is {user}</h2>
 
+    //   {/* Adding JS expression into jsx */}
+    //     <p style={myStyle}>Addition of 10 + 5 id : {10+5}</p>
+
+
+    // </div>
+
+    //import child componenet here
+    <FirstFunc/>
 
     
 
