@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import FirstFunc from './Components/FunctionalComp'
+import Profilecard from './Components/Profilecard'
 
 function App() {
  
@@ -30,7 +31,8 @@ function App() {
     // </div>
 
     //import child componenet here
-    <FirstFunc/>
+    // <FirstFunc/>
+    <Profilecard/>
 
     
 

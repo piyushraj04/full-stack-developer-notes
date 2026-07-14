@@ -1,0 +1,61 @@
+body{
+    /* background: linear-gradient(to right ,rgb(8, 104, 142),white); */
+      background-image: url(https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2t5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+  
+}
+h1,h2,h3,h4{
+    font-family: "press start 2p","consolas";
+    font-style: italic;
+    font-weight: 200;
+    /* text-decoration:rgb(0, 255, 4) wavy double; */
+    text-decoration: underline dashed rgb(236, 125, 235);
+    font-size: 15px;
+    border-radius: 5px;
+    /* float: right; study and try this -- to stop this we use clear:both on p tags*/
+}
+img{
+    height: 300px;
+    width: 250px;
+    border-radius: 50%;
+    
+}
+h1{
+    background: linear-gradient(to left ,skyblue,white);
+    border-top-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: double;
+    border-left-width: 5px;
+    border-left-color: #acb0a7;
+}
+h2{
+    background: linear-gradient(to top ,skyblue,white);
+}
+h3{
+    background: linear-gradient(to right ,skyblue,white);
+}
+h4{
+    background: linear-gradient(to bottom ,skyblue,white);
+}
+.profile-card{
+    border-style: outset;
+    border-width: 5px;
+    border-color: gold;
+    border-radius: 15px;
+    padding : 10px;    /* space bw text and border*/
+    /* border: 5px dodgerblue; */
+    height: fit-content;
+    width: fit-content;
+    /* margin: 100px; space bw div and outer screen means outside the border -- top bottom left right */
+    /* margin-left: auto; if want content at right side */
+    /* for center */
+    margin-left: auto;
+    margin-right: auto;
+    
+
+     
+}
