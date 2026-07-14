@@ -21,19 +21,23 @@ public class CustomComperator {
 
         //custom
 
-        Collections.sort(list, new Comparator<Integer>(){
-            @Override
-            public int compare(Integer o1,Integer o2){
-                if(o1<o2){
-                    return 1;
-                }
-                else if(o1>o2){
-                    return -1;
-                }
-                return 0;
-            }
-        });
+        // Collections.sort(list, new Comparator<Integer>(){
+        //     @Override
+        //     public int compare(Integer o1,Integer o2){
+        //         if(o1<o2){
+        //             return 1;
+        //         }
+        //         else if(o1>o2){
+        //             return -1;
+        //         }
+        //         return 0;
+        //     }
+        // });
 
+        // System.out.println(list);
+
+        //using lembda function
+        Collections.sort(list,(num1,num2)->num2-num1);
         System.out.println(list);
     }
     
