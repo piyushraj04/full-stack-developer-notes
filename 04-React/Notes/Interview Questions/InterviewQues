@@ -1,0 +1,58 @@
+Interview Questions
+Q1. What is React?
+
+Answer:
+React is an open-source JavaScript library developed by Meta for building reusable and interactive user interfaces using a component-based architecture.
+
+Q2. Why is React called a library and not a framework?
+
+Answer:
+Because React focuses only on the UI layer. It doesn't provide built-in solutions for routing, state management, or HTTP requests, so developers choose those separately.
+
+Q3. What is the biggest advantage of React?
+
+Answer:
+Its component-based architecture and Virtual DOM, which improve code reusability and rendering performance.
+
+------------JSX------------
+ Q1. What is JSX?
+
+Answer: JSX is a syntax extension for JavaScript that allows developers to write HTML-like code inside JavaScript. It is converted into React.createElement() calls by Babel.
+
+Q2. Is JSX mandatory in React?
+
+Answer: No. React can be written using React.createElement(), but JSX is preferred because it is simpler and more readable.
+
+Q3. Why do we use {} in JSX?
+
+Answer: Curly braces allow you to embed JavaScript expressions, variables, and function calls inside JSX.
+
+Example:
+
+const name = "Piyush";
+
+<h1>Hello {name}</h1>
+Q4. Why do we use Fragments?
+
+Answer: Fragments let a component return multiple elements without adding an unnecessary wrapper element to the DOM.
+
+Q1. What is a JSX expression?
+
+Answer: A JSX expression is any valid JavaScript expression written inside {} that React evaluates and renders.
+
+Q2. Can we write an if statement inside JSX?
+
+Answer: No. JSX accepts expressions, not statements. Use a ternary operator or move the logic outside JSX.
+
+Q3. What are the types of React components?
+
+Answer:
+
+Functional Components
+Class Components
+
+Functional components are preferred in modern React.
+
+Q4. Which type of component is recommended today?
+
+Answer: Functional components, because they are simpler and support React Hooks.

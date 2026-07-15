@@ -11,26 +11,26 @@ body{
 h1,h2,h3,h4{
     font-family: "press start 2p","consolas";
     font-style: italic;
-    font-weight: 200;
+    /* font-weight: 200; */
     /* text-decoration:rgb(0, 255, 4) wavy double; */
-    text-decoration: underline dashed rgb(236, 125, 235);
+    /* text-decoration: underline dashed rgb(236, 125, 235); */
     font-size: 15px;
     border-radius: 5px;
     /* float: right; study and try this -- to stop this we use clear:both on p tags*/
 }
 img{
-    height: 300px;
+    height: 250px;
     width: 250px;
     border-radius: 50%;
     
 }
 h1{
     background: linear-gradient(to left ,skyblue,white);
-    border-top-style: dotted;
+   /*  border-top-style: dotted;
     border-bottom-style: dotted;
     border-left-style: double;
     border-left-width: 5px;
-    border-left-color: #acb0a7;
+    border-left-color: #acb0a7; */
 }
 h2{
     background: linear-gradient(to top ,skyblue,white);
@@ -38,15 +38,12 @@ h2{
 h3{
     background: linear-gradient(to right ,skyblue,white);
 }
-h4{
-    background: linear-gradient(to bottom ,skyblue,white);
-}
 .profile-card{
     border-style: outset;
     border-width: 5px;
     border-color: gold;
     border-radius: 15px;
-    padding : 10px;    /* space bw text and border*/
+       /* space bw text and border*/
     /* border: 5px dodgerblue; */
     height: fit-content;
     width: fit-content;
@@ -58,4 +55,16 @@ h4{
     
 
      
+}
+.info{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(0, 60, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
