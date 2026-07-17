@@ -1,8 +1,32 @@
 body{
+  align-items: center;
   text-align: center;
-  font-size: xx-large;
+  gap:10px;
+  
+  /* font-size: xx-large; */
 }
-.div-main{
-  border: 1px solid;
-  width: fit-content;
+
+.card{
+  border: 1px solid rgb(213, 21, 21);
+
+
+}
+.logout{
+  border: 1px solid black;
+}
+.mainCom{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.empCard img{
+  width:200px;
+  border-radius: 10px;
+}
+.empCard{
+  border: 1px solid black;
+  width: 400px;
+  border-radius: 10px;
+  background-color: rgb(142, 132, 132);
 }

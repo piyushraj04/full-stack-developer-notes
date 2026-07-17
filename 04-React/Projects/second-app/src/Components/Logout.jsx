@@ -1,12 +1,11 @@
 import React from 'react'
 
-function Logout(props) {
+function Logout({userName}) {
   return (
-    <>
-    <h3>{props.userName}, do you want to log out?</h3>
+    <div className='logout'>
+        <h3>{userName}, do you want to log out?</h3>
     <input type="submit"  value="logout"/>
-    {/* <button>Logout</button> */}
-    </>
+    </div>
   )
 }
 

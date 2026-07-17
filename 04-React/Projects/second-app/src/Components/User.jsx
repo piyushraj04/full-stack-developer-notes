@@ -14,14 +14,14 @@ import Logout from './Logout'
 //   )
 // }
 
-function User(props) {
+function User({userName = "Guest",message = "have a nice day...❤️👋"}) {
   return (
     <>
-    
-    <p>Welcome {props.userName}</p>
-    
-    <Logout userName={props.userName}/>
-    <hr />
+    <div className='card'>
+      <p>Welcome {userName}</p>
+    <p>{message}</p>
+    </div>
+    <Logout userName= {userName}/>
     </>
 
   )
