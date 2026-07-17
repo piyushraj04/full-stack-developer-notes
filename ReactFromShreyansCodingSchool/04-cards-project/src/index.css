@@ -1,0 +1,385 @@
+/* ==========================================================
+   PARENT CONTAINER
+   Purpose:
+   - Holds all the job cards.
+   - Uses Flexbox to arrange cards.
+   ========================================================== */
+
+.parent {
+
+    /* Occupies the full width of the screen */
+    width: 100%;
+
+    /* Minimum height equals the viewport height */
+    min-height: 100vh;
+
+    /* Background color of the page */
+    background: #f5f5f5;
+
+    /* Space inside the parent from all sides */
+    padding: 30px;
+
+    /* Enables Flexbox layout */
+    display: flex;
+
+    /* Allows cards to move to the next row when space is insufficient */
+    flex-wrap: wrap;
+
+    /* Horizontally centers all cards */
+    justify-content: center;
+
+    /* Creates equal spacing between cards */
+    gap: 25px;
+}
+
+
+
+/* ==========================================================
+   CARD CONTAINER
+   Purpose:
+   - Represents one job card.
+   - Contains Top, Center and Bottom sections.
+   ========================================================== */
+
+.cards {
+
+    /* Fixed width of each card */
+    width: 300px;
+
+    /* Fixed height of each card */
+    height: 340px;
+
+    /* Card background color */
+    background: white;
+
+    /* Gives rounded corners */
+    border-radius: 28px;
+
+    /* Space between border and content */
+    padding: 22px;
+
+    /* Enables Flexbox */
+    display: flex;
+
+    /* Arranges children vertically */
+    flex-direction: column;
+
+    /* Pushes Top to top and Bottom to bottom */
+    justify-content: space-between;
+
+    /* Soft shadow for elevation effect */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+
+
+/* ==========================================================
+   TOP SECTION
+   Contains:
+   - Company Logo
+   - Save Button
+   ========================================================== */
+
+.top {
+
+    /* Logo and button appear in one row */
+    display: flex;
+
+    /* Pushes logo to left and button to right */
+    justify-content: space-between;
+
+    /* Vertically aligns both */
+    align-items: center;
+}
+
+
+
+/* =====================
+   Company Logo
+===================== */
+
+.top img {
+
+    /* Logo dimensions */
+    width: 46px;
+    height: 46px;
+
+    /* Prevents image distortion */
+    object-fit: contain;
+
+    /* Makes logo circular */
+    border-radius: 50%;
+
+    /* Light border around logo */
+    border: 1px solid #e5e5e5;
+
+    /* Space between logo and border */
+    padding: 5px;
+}
+
+
+
+/* =====================
+   Save Button
+===================== */
+
+.top button {
+
+    /* Places text and icon in one row */
+    display: flex;
+
+    /* Vertically aligns icon and text */
+    align-items: center;
+
+    /* Space between Save text and icon */
+    gap: 5px;
+
+    /* Inner spacing */
+    padding: 6px 10px;
+
+    /* Rounded corners */
+    border-radius: 8px;
+
+    /* Light border */
+    border: 1px solid #e5e5e5;
+
+    /* White background */
+    background: white;
+
+    /* Text color */
+    color: #777;
+
+    /* Changes cursor into hand */
+    cursor: pointer;
+
+    /* Smooth hover animation */
+    transition: 0.3s;
+}
+
+.top button:hover{
+
+    /* Light gray background on hover */
+    background: #f3f3f3;
+}
+
+
+
+/* ==========================================================
+   CENTER SECTION
+   Contains:
+   - Company Name
+   - Job Posted Time
+   - Job Title
+   - Tags
+   ========================================================== */
+
+.center{
+
+    /* Arranges children vertically */
+    display: flex;
+
+    flex-direction: column;
+
+    /* Equal spacing between children */
+    gap: 15px;
+}
+
+
+
+/* ==========================================================
+   COMPANY ROW
+   Amazon      5 days ago
+   ========================================================== */
+
+.company{
+
+    /* Company name and date appear in one row */
+    display: flex;
+
+    /* Vertically aligns both */
+    align-items: center;
+
+    /* Space between them */
+    gap: 6px;
+}
+
+.company h3{
+
+    /* Removes browser default margin */
+    margin: 0;
+
+    /* Font size */
+    font-size: 16px;
+
+    /* Semi-bold */
+    font-weight: 600;
+}
+
+.company span{
+
+    /* Small text */
+    font-size: 12px;
+
+    /* Gray color */
+    color: #8b8b8b;
+}
+
+
+
+/* ==========================================================
+   JOB TITLE
+   ========================================================== */
+
+.center h2{
+
+    /* Large heading */
+    font-size: 32px;
+
+    /* Bold */
+    font-weight: 700;
+
+    /* Better readability */
+    line-height: 1.2;
+}
+
+
+
+/* ==========================================================
+   TAGS CONTAINER
+   ========================================================== */
+
+.tag{
+
+    /* Places tags in one row */
+    display: flex;
+
+    /* Space between tags */
+    gap: 8px;
+}
+
+
+
+/* ==========================================================
+   INDIVIDUAL TAG
+   ========================================================== */
+
+.tag h4{
+
+    /* Removes browser margin */
+    margin: 0;
+
+    /* Light gray background */
+    background: #f2f2f2;
+
+    /* Space inside tag */
+    padding: 6px 12px;
+
+    /* Rounded edges */
+    border-radius: 7px;
+
+    /* Small font */
+    font-size: 12px;
+
+    /* Medium weight */
+    font-weight: 500;
+
+    /* Text color */
+    color: #555;
+}
+
+
+
+/* ==========================================================
+   BOTTOM SECTION
+   Contains:
+   - Salary
+   - Location
+   - Apply Button
+   ========================================================== */
+
+.bottom{
+
+    /* Salary and button in one row */
+    display: flex;
+
+    /* Salary left, button right */
+    justify-content: space-between;
+
+    /* Vertically aligns both */
+    align-items: center;
+}
+
+
+
+/* =====================
+   Salary
+===================== */
+
+.bottom h3{
+
+    /* Removes default margin */
+    margin: 0;
+
+    /* Large text */
+    font-size: 24px;
+
+    /* Bold */
+    font-weight: 700;
+}
+
+
+
+/* =====================
+   Location
+===================== */
+
+.bottom p{
+
+    /* Small gap from salary */
+    margin-top: 5px;
+
+    /* Small font */
+    font-size: 12px;
+
+    /* Gray text */
+    color: #8b8b8b;
+}
+
+
+
+/* =====================
+   Apply Button
+===================== */
+
+.bottom button{
+
+    /* Black background */
+    background: #111;
+
+    /* White text */
+    color: white;
+
+    /* Removes default border */
+    border: none;
+
+    /* Inner spacing */
+    padding: 10px 18px;
+
+    /* Rounded corners */
+    border-radius: 8px;
+
+    /* Font size */
+    font-size: 13px;
+
+    /* Hand cursor */
+    cursor: pointer;
+
+    /* Smooth hover animation */
+    transition: 0.3s;
+}
+
+.bottom button:hover{
+
+    /* Slightly lighter black */
+    background: #333;
+}
