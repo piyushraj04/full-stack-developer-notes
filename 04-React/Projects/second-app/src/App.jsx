@@ -7,6 +7,8 @@ import User from './Components/User'
 import Employee from './Employee'
 import MotorcycleCard from './Components/MotorcycleCard'
 import ArtworkCard from './Components/ArtworkCard'
+import State from './Components/State'
+import TheLightSwitch from './Components/TheLightSwitch'
 
 const emp = {
   name : "Piyush",
@@ -45,10 +47,13 @@ function App() {
   return (
     
     <div className='mainCom'>
+      <TheLightSwitch/>
+
+      {/* <State/> */}
     {/* <MotorcycleCard bikeInfo = {bikeInfo}/>
     <MotorcycleCard bikeInfo = {bikeInfo2}/> */}
-    <ArtworkCard artInfo = {artInfo}/>
-    <ArtworkCard artInfo = {artInfo2}/>
+    {/* <ArtworkCard artInfo = {artInfo}/>
+    <ArtworkCard artInfo = {artInfo2}/> */}
 
       
       {/* <Employee emp = {emp}/>
