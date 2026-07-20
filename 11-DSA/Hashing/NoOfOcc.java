@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class NoOfOcc{
     public static int max(int[] arr){
         int max = arr[0];
@@ -23,7 +26,7 @@ class NoOfOcc{
         int orgLen = arr1.length;
         
         for(int i = 0; i < orgLen; i++){
-            ((hash2[((int)(arr1[i]))-97]))++;
+            ((hash2[((int)(arr1[i]))-'a']))++;
             // System.out.println((int)(arr1[i]));
         }
         
@@ -35,6 +38,9 @@ class NoOfOcc{
         int[] arr = {1,5,6,5,6,7,4};
         char[] arr1 = {'a','b','d','e','r'};
         int[] hash2 = new int[26];
+        Map<Integer,Integer> map = new HashMap<>();
+        
+
        
         int size = NoOfOcc.max(arr)+1;
         int[] hash = new int[size];
