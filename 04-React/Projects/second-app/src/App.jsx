@@ -9,6 +9,9 @@ import MotorcycleCard from './Components/MotorcycleCard'
 import ArtworkCard from './Components/ArtworkCard'
 import State from './Components/State'
 import TheLightSwitch from './Components/TheLightSwitch'
+import TheLightFun from './Components/TheLightFun'
+import TheGreetingCard from './Components/TheGreetingCard'
+import TheTrafficLight from './Components/TheTrafficLight'
 
 const emp = {
   name : "Piyush",
@@ -47,7 +50,11 @@ function App() {
   return (
     
     <div className='mainCom'>
-      <TheLightSwitch/>
+      {/* <TheLightFun/> */}
+
+      {/* <TheGreetingCard/> */}
+
+      <TheTrafficLight/>
 
       {/* <State/> */}
     {/* <MotorcycleCard bikeInfo = {bikeInfo}/>
