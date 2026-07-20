@@ -1,0 +1,92 @@
+/* Page Styling */
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+}
+
+/* Product Card */
+.prod {
+    width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.prod:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Product Image */
+.prod img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 500px;
+}
+
+/* Product Title */
+.prod h1 {
+    font-size: 22px;
+    color: #222;
+    margin: 10px 0;
+}
+
+/* Price */
+.prod h2:nth-of-type(1) {
+    color: #2e7d32;
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+/* Rating */
+.prod h2:nth-of-type(2) {
+    color: #ff9800;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* Button */
+button {
+    display: block;
+    margin: 25px auto 15px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #0d6efd;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #084298;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Divider */
+hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+}
+
+/* Spinner Container */
+.spinner-border,
+.spinner-grow {
+    display: block;
+    margin: 40px auto;
+}
