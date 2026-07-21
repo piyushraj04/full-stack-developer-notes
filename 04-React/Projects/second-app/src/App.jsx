@@ -50,9 +50,11 @@ function App() {
   return (
     
     <div className='mainCom'>
-      {/* <TheLightFun/> */}
+      <TheLightFun/>
+      <hr />
 
-      {/* <TheGreetingCard/> */}
+      <TheGreetingCard/>
+      <hr />
 
       <TheTrafficLight/>
 

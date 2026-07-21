@@ -6,6 +6,9 @@ import './App.css'
 import CondRen1 from './Components/CondRen1'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Product from './Components/Product'
+import Login from './Components/Login'
+import Dashboard from './Components/Dashboard'
+import Ternary from './Components/Ternary'
 
 const product = {
   title : "Atomic Habits",
@@ -19,8 +22,12 @@ function App() {
 
   return (
     <>
+
+    {/* <Login/> */}
+    <Ternary name = {"Piyush"}/>
+    {/* <Dashboard/> */}
       {/* <CondRen1/> */}
-      <Product props = {product}/>
+      {/* <Product props = {product}/> */}
     </>
   )
 }
