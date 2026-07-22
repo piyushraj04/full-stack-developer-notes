@@ -6,23 +6,27 @@ class SumOfHighFreAndLowFre{
         for(int e : nums){
             hash[e]++;
         }
-        int lowFre = 1;
-        int highFre = 0;
-        for(int i = 0 ; i < hash.length; i++){
-            if(lowFre > hash[i] && hash[i] != 0){
-                lowFre = hash[i];
-            }
-
-            if(highFre<hash[i]){
-                highFre = hash[i];
-            }
+        return (SumOfHighFreAndLowFre.getMax(hash))+(SumOfHighFreAndLowFre.getMin(hash));
+    }
+    public static int getMax(int[] arr){
+        int max = 0;
+        for(int e : arr){
+            if(max<e) 
+                max = e;
         }
-        System.out.println(nums.length);
-        return lowFre+highFre;
+        return max;
+    }
+      public static int getMin(int[] arr){
+        int min= Integer.MAX_VALUE;
+        for(int e : arr){
+            if(min>e && e != 0) 
+                min = e;
+        }
+        return min;
     }
     public static void main(String[] args) {
         int nums[] = {5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,5000};
 
-        System.out.println(nums.length);
+        System.out.println(new SumOfHighFreAndLowFre().sumHighestAndLowestFrequency(nums));
     }
 }
