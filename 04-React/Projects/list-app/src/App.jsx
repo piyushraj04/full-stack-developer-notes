@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Product from './components/Product'
+import States from './components/States'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,7 +35,8 @@ const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
       }
     </ul> */}
 
-    <Product/>
+    {/* <Product/> */}
+    <States/>
     
     </>
   )
