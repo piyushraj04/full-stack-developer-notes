@@ -35,8 +35,8 @@ const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
       }
     </ul> */}
 
-    {/* <Product/> */}
-    <States/>
+    <Product/>
+    {/* <States/> */}
     
     </>
   )
