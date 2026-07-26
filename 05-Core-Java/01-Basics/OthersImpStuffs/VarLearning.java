@@ -62,7 +62,18 @@ class VarLearning{
 
 
 
-        
+        System.out.println(al);
+
+
+        Iterator ite = al.iterator();
+
+        while(ite.hasNext()){
+            // ite.remove();
+            al.add(56);//
+            System.out.println();
+            System.out.println(ite.next());
+        }
+        // System.out.println(ite.next());
 
 
 
