@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Product from './components/Product'
 import States from './components/States'
+import Home from './components/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,9 @@ const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
 // })
   return (
     <>
+
+    <Product/>
+    
     {/* <h1>List of Students in React</h1>
     <ul>
       {
@@ -35,7 +39,7 @@ const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
       }
     </ul> */}
 
-    <Product/>
+    
     {/* <States/> */}
     
     </>

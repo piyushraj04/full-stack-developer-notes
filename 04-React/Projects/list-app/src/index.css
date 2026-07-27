@@ -1,49 +1,263 @@
-/* div {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 24px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  text-align: center;
+/* ===========================
+   Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   Global Reset
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-p {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin-bottom: 16px;
+html{
+    scroll-behavior:smooth;
 }
 
-select {
-  width: 100%;
-  padding: 10px 14px;
-  font-size: 15px;
-  color: #333;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 18px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+body{
+    background:#f5f5f5;
+    color:#222;
 }
 
-select:hover {
-  border-color: #888;
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+    width:100%;
+    height:75px;
+
+    background:#ffffff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 60px;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-select:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#16a34a;
 }
 
-option {
-  padding: 8px;
-  font-size: 15px;
-} */
+.category-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.category-box label{
+    font-size:18px;
+    font-weight:500;
+}
+
+.category-box select{
+
+    width:180px;
+
+    padding:10px;
+
+    border:2px solid #16a34a;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.category-box select:hover{
+    border-color:#15803d;
+}
+
+/* ===========================
+   Product Section
+=========================== */
+
+.product-wrapper{
+
+    width:95%;
+
+    margin:35px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    padding:18px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.card-img{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:180px;
+}
+
+.card-img img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:contain;
+}
+
+.delivery-time{
+
+    display:inline-block;
+
+    background:#eefaf0;
+
+    color:#16a34a;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    margin:10px 0;
+}
+
+.card h3{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+    min-height:55px;
+}
+
+.unit{
+
+    color:#777;
+
+    margin-bottom:18px;
+}
+
+.price-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.price{
+
+    font-size:24px;
+
+    font-weight:700;
+}
+
+.price-section button{
+
+    background:white;
+
+    color:#16a34a;
+
+    border:2px solid #16a34a;
+
+    padding:8px 22px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.price-section button:hover{
+
+    background:#16a34a;
+
+    color:white;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:15px;
+
+        padding:20px;
+    }
+
+    .category-box{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .category-box select{
+
+        width:100%;
+        max-width:250px;
+    }
+
+    .logo{
+
+        font-size:24px;
+    }
+}

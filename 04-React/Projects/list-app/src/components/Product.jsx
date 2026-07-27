@@ -31,8 +31,12 @@ import Cereal2 from "../assets/images/carels2.avif";
 import Cereal3 from "../assets/images/carels3.avif";
 import Cereal4 from "../assets/images/carels4.avif";
 import Cereal5 from "../assets/images/carels5.avif";
+// import { useState } from "react";
 
 import "./product.css";
+import Home from "./Home";
+
+// export const ThemeContext = React.createContext();
 
 const products = [
   // =================== Milk ===================
@@ -251,37 +255,19 @@ function Product() {
     filterCategory === "All"
       ? products
       : products.filter((product) => product.category === filterCategory);
-  const cateogiries = ["All","Milk", "Eggs", "Bread"];
-  //   const handleMilk = () => {
-  //     setFilterCategory("Milk");
-  //     console.log("Milk updated");
-  //   };
-  //   const handleBread = () => {
-  //     // setFilterCategory = "Bread"
-  //     setFilterCategory("Bread");
-  //   };
-  //   const handleEgg = () => {
-  //     // setFilterCategory = "Egg"
-  //     setFilterCategory("Eggs");
-  //     console.log("Egg updating");
-  //   };
+  const cateogiries = ["All", "Milk", "Eggs", "Bread","careals"];
+
   const handleCateChange = (event) => {
     setFilterCategory(event.target.value);
   };
   return (
+
     <div className="product-wrapper">
-      {/* <p>Select category here:--</p> */}
-      <select
-        className="select category"
-        name=""
-        id=""
-        onChange={handleCateChange}
-      >
-        {/* <option value="">Choose category here:--</option> */}
-        {cateogiries.map((cate) => {
-          return <option value={cate}>{cate}</option>;
-        })}
-      </select>
+      <Home 
+      handleCateChange = {handleCateChange}
+      filterCategory = {filterCategory}
+      />
+    
 
       {filteredProducts.map((prod) => {
         const { image, title, time, unit, price, category } = prod;
