@@ -1,25 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Product from './components/Product'
-import States from './components/States'
-import Home from './components/Home'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import heroImg from "./assets/hero.png";
+import "./App.css";
+import Product from "./components/Product";
+import States from "./components/States";
+import Home from "./components/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
-// let allStuds = students.map((std)=>{
-//   // console.log(std);
-  
-// })
+  const [count, setCount] = useState(0);
+  const students = ["Piyush", "Gagan", "Ravi", "Vishal", "Khushi", "Chummi"];
+  // let allStuds = students.map((std)=>{
+  //   // console.log(std);
+
+  // })
   return (
     <>
+      <Product />
 
-    <Product/>
-    
-    {/* <h1>List of Students in React</h1>
+      {/* <h1>List of Students in React</h1>
     <ul>
       {
         students.map((std)=>{
@@ -39,11 +38,9 @@ const students = ["Piyush","Gagan","Ravi","Vishal","Khushi","Chummi"];
       }
     </ul> */}
 
-    
-    {/* <States/> */}
-    
+      {/* <States/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

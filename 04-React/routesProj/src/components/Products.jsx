@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// =================== Milk ===================
+import "./Products.css";
 import AmulTaaza from "../assets/images/Amul Taaza.avif";
 import AmulGold from "../assets/images/Amul Gold.avif";
 import AmulCow from "../assets/images/Amul Cow.avif";
@@ -31,13 +31,6 @@ import Cereal2 from "../assets/images/carels2.avif";
 import Cereal3 from "../assets/images/carels3.avif";
 import Cereal4 from "../assets/images/carels4.avif";
 import Cereal5 from "../assets/images/carels5.avif";
-// import { useState } from "react";
-
-import "./product.css";
-import Home from "./Home";
-
-// export const ThemeContext = React.createContext();
-
 const products = [
   // =================== Milk ===================
   {
@@ -248,58 +241,54 @@ const products = [
   },
 ];
 
-function Product() {
-  const [filterCategory, setFilterCategory] = useState("All");
+const Products = () => {
+  const [category, setCategory] = useState("All");
 
-  const filteredProducts =
-    filterCategory === "All"
-      ? products
-      : products.filter((product) => product.category === filterCategory);
-  const cateogiries = ["All", "Milk", "Eggs", "Bread", "careals"];
+  const filteredCategory =
+   category===("All")
+  ? products 
+  : products.filter((product) => product.category==category);
 
-  const handleCateChange = (event) => {
-    setFilterCategory(event.target.value);
-  };
+  
+
   return (
-    <div className="product-wrapper">
-      {/* <Home 
-      handleCateChange = {handleCateChange}
-      filterCategory = {filterCategory}
-      /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
+    
+    <div className="products-container">
+      <h1>🛒 Grocery Store</h1>
+      <select
+        value={category}
+        onChange={(e) => {
+          setCategory(e.target.value);
+        }}
+      >
+        <option value="All">All</option>
+        <option value="Milk">Milk</option>
+        <option value="Bread">Bread</option>
+        <option value="Eggs">Eggs</option>
+        <option value="Cereals">Cereals</option>
+      </select>
+      {/* <h2>{category}</h2> */}
+      <div className="products-grid">
+        {filteredCategory.map((product, index) => (
+          <div className="product-card" key={index}>
+            <img src={product.image} alt={product.title} />
 
-        <Route path="/milk" element={<Milk products={products} />} />
+            <p className="delivery">⏱ {product.time} MINS</p>
 
-        <Route path="/bread" element={<Bread products={products} />} />
+            <h3>{product.title}</h3>
 
-        <Route path="/egg" element={<Eggs products={products} />} />
-      </Routes>
+            <p>{product.unit}</p>
 
-      {filteredProducts.map((prod) => {
-        const { image, title, time, unit, price, category } = prod;
-        return (
-          <div className="card">
-            <div className="card-img">
-              <img src={image} alt={prod.title} />
-            </div>
-
-            <p className="delivery-time">⏱ {time} MINS</p>
-
-            <h3>{title}</h3>
-
-            <p className="unit">{unit}</p>
-
-            <div className="price-section">
-              <span className="price">₹{price}</span>
+            <div className="price-row">
+              <span>₹{product.price}</span>
 
               <button>ADD</button>
             </div>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
+;
 }
-
-export default Product;
+export default Products;
