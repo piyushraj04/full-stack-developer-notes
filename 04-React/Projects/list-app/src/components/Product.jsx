@@ -263,10 +263,21 @@ function Product() {
   return (
 
     <div className="product-wrapper">
-      <Home 
+      {/* <Home 
       handleCateChange = {handleCateChange}
       filterCategory = {filterCategory}
-      />
+      /> */}
+      <Routes>
+        <Route 
+            path = "/" 
+            element = {  <Home 
+      handleCateChange = {handleCateChange}
+      filterCategory = {filterCategory}
+      /> }></Route>
+
+      
+
+      </Routes>
     
 
       {filteredProducts.map((prod) => {

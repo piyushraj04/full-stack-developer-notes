@@ -4,7 +4,6 @@ const Home = ({ filterCategory, handleCateChange }) => {
   return (
     <nav className="navbar">
       <div className="logo">🛒 Grocery Store</div>
-
       <div className="category-box">
         <label>Category</label>
 
