@@ -1,0 +1,282 @@
+Very good Piyush 🔥
+This is classic Producer–Consumer inter-thread communication.
+
+class Shared {
+
+    private int data;
+    private boolean hasData = false;
+
+    // Producer method
+    public synchronized void produce(int value) throws InterruptedException {
+
+        if (hasData) {
+            wait();   // wait until consumer consumes
+        }
+
+        data = value;
+        System.out.println("Produced: " + data);
+        hasData = true;
+
+        notify();  // notify consumer
+    }
+
+    // Consumer method
+    public synchronized void consume() throws InterruptedException {
+
+        if (!hasData) {
+            wait();   // wait until producer produces
+        }
+
+        System.out.println("Consumed: " + data);
+        hasData = false;
+
+        notify();  // notify producer
+    }
+}
+
+public class Demo {
+
+    public static void main(String[] args) {
+
+        Shared shared = new Shared();
+
+        Thread producer = new Thread(() -> {
+            try {
+                shared.produce(10);
+            } catch (Exception e) {}
+        });
+
+        Thread consumer = new Thread(() -> {
+            try {
+                shared.consume();
+            } catch (Exception e) {}
+        });
+
+        producer.start();
+        consumer.start();
+    }
+}
+
+
+explain me step by step in very simple language
+
+I’ll explain it like a story so you never forget it.
+
+🟢 First Understand the Characters
+
+We have:
+
+📦 Shared → a box that stores one value
+👨‍🍳 Producer thread → puts data in box
+🧑 Consumer thread → takes data from box
+
+🟢 Inside Shared Class
+private int data;
+private boolean hasData = false;
+
+data → the item in the box
+
+hasData → tells whether box is full or empty
+
+If hasData = false → box empty
+If hasData = true → box full
+
+🟢 Important: Both Methods are synchronized
+public synchronized void produce()
+public synchronized void consume()
+
+This means:
+
+👉 Only one thread can enter these methods at a time.
+👉 Lock is taken on the shared object.
+
+🟢 Step-by-Step Execution
+
+Now imagine both threads start.
+
+🔹 Case 1: Producer runs first
+Step 1
+
+Producer calls:
+
+shared.produce(10);
+
+It acquires lock.
+
+Step 2
+
+Check condition:
+
+if (hasData)
+
+Right now:
+
+hasData = false
+
+So condition is false.
+Producer does NOT wait.
+
+Step 3
+
+Producer stores value:
+
+data = 10
+hasData = true
+
+Prints:
+
+Produced: 10
+Step 4
+
+Producer calls:
+
+notify();
+
+This wakes up any waiting thread (consumer if waiting).
+
+Step 5
+
+Producer method ends.
+Lock is released.
+
+🔹 Now Consumer Runs
+
+Consumer calls:
+
+shared.consume();
+
+It acquires lock.
+
+Step 6
+
+Check:
+
+if (!hasData)
+
+Now:
+
+hasData = true
+
+So consumer does NOT wait.
+
+Step 7
+
+Consumer prints:
+
+Consumed: 10
+
+Then:
+
+hasData = false
+
+Box becomes empty.
+
+Step 8
+
+Consumer calls:
+
+notify();
+
+This wakes up producer if it was waiting.
+
+Step 9
+
+Consumer finishes. Lock released.
+
+🟢 Now Another Scenario
+🔹 If Consumer Runs First
+
+Step 1:
+Consumer enters consume().
+
+Step 2:
+Check:
+
+if (!hasData)
+
+Right now:
+
+hasData = false
+
+Condition true.
+
+So consumer calls:
+
+wait();
+🔴 What happens when wait() is called?
+
+1️⃣ Consumer releases lock immediately
+2️⃣ Goes into WAITING state
+3️⃣ Producer can now enter
+
+Then producer produces data and calls notify().
+
+Consumer wakes up and continues.
+
+🟢 Important Concept
+sleep() vs wait()
+
+sleep() → does NOT release lock
+
+wait() → releases lock
+
+That is why wait() is used for communication.
+
+🟢 Why synchronized is required?
+
+Because:
+
+wait() and notify() work on object’s monitor lock.
+
+If method not synchronized → IllegalMonitorStateException.
+
+🟢 Why We Use hasData Flag?
+
+To control condition:
+
+Producer waits if box full
+
+Consumer waits if box empty
+
+This prevents:
+
+❌ Overwriting data
+❌ Reading empty data
+
+🟢 Real Life Example
+
+Think of water tank:
+
+Producer → fills tank
+Consumer → uses water
+
+If tank full → filling must wait
+If tank empty → using must wait
+
+🟢 Very Important Interview Improvement
+
+In real projects, we use:
+
+while(condition) {
+    wait();
+}
+
+Instead of if.
+
+Because of spurious wakeup problem.
+
+🔥 Final Understanding
+
+Inter-thread communication works like this:
+
+1️⃣ One thread checks condition
+2️⃣ If condition not satisfied → wait()
+3️⃣ wait() releases lock
+4️⃣ Other thread changes condition
+5️⃣ notify() wakes waiting thread
+6️⃣ Waiting thread competes for lock
+7️⃣ After getting lock → continues execution
+
+🎯 One-Line Smart Answer
+
+“Producer and consumer coordinate using wait() and notify(), where wait() releases the object lock and pauses execution, and notify() wakes up waiting threads to resume processing.”
