@@ -71,6 +71,7 @@ const Counter = () => {
       <button onClick={handleBulbImg}>{bulbImg ? "OFF" : "ON"}</button>
       <hr />
       <ArraysComp/>
+      <hr />
     </div>
   );
 };

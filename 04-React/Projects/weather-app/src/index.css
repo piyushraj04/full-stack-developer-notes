@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "Singlove";
+    src: url("./assets/fonts/Singlove.otf") format("opentype");
+}
+
+body{
+    font-family: "Singlove", sans-serif;
+    background-color: rgb(194, 177, 177);
+    color: whitesmoke;
+}
+
+/* Navbar */
+
+.nav-bar {
+    height: 75px;
+    padding: 0 60px;
+    background: rgba(20, 20, 30, 0.85);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-bar h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-bar h1 span {
+    color: #38bdf8;
+}
+
+.links {
+    display: flex;
+    gap: 35px;
+}
+
+.links a {
+    text-decoration: none;
+    color: rgb(203, 246, 11);
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.links a:hover {
+    color: #38bdf8;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
