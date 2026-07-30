@@ -249,6 +249,13 @@ const Products = () => {
   ? products 
   : products.filter((product) => product.category==category);
 
+   const handleDisc = () => {
+      const disc = category.price - category.price*0.1;
+      setCategory({...category,price:disc})
+      setDisabled(true)
+    }
+  
+    const [disabled,setDisabled] = useState(false);
   
 
   return (
@@ -282,7 +289,7 @@ const Products = () => {
             <div className="price-row">
               <span>₹{product.price}</span>
 
-              <button>ADD</button>
+              <button onClick={handleDisc} disabled= {disabled}>ADD</button>
             </div>
           </div>
         ))}

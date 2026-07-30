@@ -1,0 +1,8 @@
+.navbar{
+    background-color: #a39a9a;
+    display: flex;
+    flex-direction:row;
+    gap: 15px;
+    flex-wrap: wrap;
+
+}

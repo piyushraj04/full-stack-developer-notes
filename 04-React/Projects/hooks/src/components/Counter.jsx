@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import bulbOn from "../assets/bulbOn.jfif"
 import bulbOff from "../assets/bulbOff.jfif"
+import ArraysComp from "./ArraysComp";
 
 const initVal = 0;
 const img = bulbOff;
@@ -68,6 +69,8 @@ const Counter = () => {
 
       <img src={bulbImg?bulbOn:bulbOff} alt="" />
       <button onClick={handleBulbImg}>{bulbImg ? "OFF" : "ON"}</button>
+      <hr />
+      <ArraysComp/>
     </div>
   );
 };
