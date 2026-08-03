@@ -1,17 +1,33 @@
+/* ==========================
+   Custom Font
+========================== */
 @font-face {
     font-family: "Singlove";
     src: url("./assets/fonts/Singlove.otf") format("opentype");
 }
 
+/* ==========================
+   Global Styles
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    font-family: "Singlove", sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: rgb(194, 177, 177);
     color: whitesmoke;
 }
 
-/* Navbar */
+/* ==========================
+   Navbar
+========================== */
 
-.nav-bar {
+.nav-bar{
     height: 75px;
     padding: 0 60px;
     background: rgba(20, 20, 30, 0.85);
@@ -24,46 +40,57 @@ body{
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.nav-bar h1 {
+.nav-bar h1{
+    font-family: "Poppins", sans-serif;
     color: white;
     font-size: 2rem;
     font-weight: 700;
     cursor: pointer;
 }
 
-.nav-bar h1 span {
+.nav-bar h1 span{
     color: #38bdf8;
 }
 
-.links {
+.links{
     display: flex;
     gap: 35px;
 }
 
-.links a {
+.links a{
     text-decoration: none;
     color: rgb(203, 246, 11);
     font-size: 18px;
     font-weight: 500;
-    transition: 0.3s;
+    transition: .3s;
     position: relative;
 }
 
-.links a:hover {
+.links a:hover{
     color: #38bdf8;
 }
 
-.links a::after {
+.links a::after{
     content: "";
     position: absolute;
-    width: 0;
-    height: 2px;
     left: 0;
     bottom: -6px;
+    width: 0;
+    height: 2px;
     background: #38bdf8;
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.links a:hover::after {
+.links a:hover::after{
     width: 100%;
+}
+
+/* ==========================
+   Custom Font Usage
+========================== */
+
+.weather-title,
+.logo,
+.hero-title{
+    font-family: "Singlove", cursive;
 }
