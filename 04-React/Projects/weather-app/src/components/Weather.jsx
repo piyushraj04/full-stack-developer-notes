@@ -7,7 +7,7 @@ function Weather() {
   const [error, setError] = useState("");
   useEffect(() => {
     if(city.trim()==="")return;
-    let myTimeOut = setTimeout(() => {
+    let myTimeOut = setTimeout( async() => {
       const url = `https://goweather.xyz/v2/weather/${city}`;
       const fetched_url = fetch(url);
       fetched_url
