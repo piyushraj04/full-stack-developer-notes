@@ -8,6 +8,8 @@ import Effect from "./components/Effect";
 import CompC from "./components/CompC";
 import Refhook from "./components/Refhook";
 import RefHook2 from "./components/RefHook2";
+import Reducer from "./components/Reducer";
+import ToDo from "./components/ToDo";
 
 export const myContext = createContext();
 const data = {
@@ -17,7 +19,9 @@ const data = {
 function App() {
   return (
     <>
-    <RefHook2/>
+    <ToDo/>
+    {/* <Reducer/> */}
+    {/* <RefHook2/> */}
     {/* <Refhook/> */}
       {/* <myContext.Provider value={data}>
         <CompC />
