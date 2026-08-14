@@ -1,0 +1,316 @@
+/* ==========================================================================
+   Student Placement Form — stylesheet
+   Palette : Ink #16233F · Forest #1F6F54 · Paper #F6F7F4 · Border #E1E4E1
+   Type    : Fraunces (display/numerals) + Inter (functional)
+   Concept : the form's five real sections (Personal, Contact, Education,
+             Placement, Account) are treated as a numbered dossier —
+             a formal application, not a generic settings page.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --ink: #16233f;
+  --ink-soft: #3c4a68;
+  --forest: #1f6f54;
+  --forest-light: #dceee5;
+  --paper: #f6f7f4;
+  --card: #ffffff;
+  --border: #e1e4e1;
+  --muted: #6b7280;
+  --danger: #b3441e;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(22, 35, 63, 0.04), 0 12px 32px -16px rgba(22, 35, 63, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+/* ---------------------------------- Form shell ---------------------------------- */
+
+.student-form {
+  counter-reset: section;
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 48px 56px 56px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  font-family: "Inter", -apple-system, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------------------------------- Headline ---------------------------------- */
+
+.student-form h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.student-form h2::after {
+  content: "Placement enrollment";
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-top: 8px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------------------------------- Section headers ---------------------------------- */
+
+.student-form h3 {
+  counter-increment: section;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 44px 0 22px;
+  padding-top: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.student-form h3::before {
+  content: "0" counter(section);
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--forest);
+  flex-shrink: 0;
+}
+
+.student-form h3:first-of-type {
+  margin-top: 8px;
+}
+
+/* ---------------------------------- Labels & structure ---------------------------------- */
+
+.student-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 18px 0 7px;
+}
+
+.student-form h3 + label {
+  margin-top: 0;
+}
+
+.student-form br {
+  display: block;
+  content: "";
+  margin-top: 2px;
+}
+
+/* ---------------------------------- Text-style inputs ---------------------------------- */
+
+.student-form input[type="text"],
+.student-form input[type="tel"],
+.student-form input[type="email"],
+.student-form input[type="date"],
+.student-form input[type="number"],
+.student-form input[type="password"],
+.student-form select {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  appearance: none;
+}
+
+.student-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.student-form input::placeholder {
+  color: #9aa1ac;
+}
+
+.student-form input:hover,
+.student-form select:hover {
+  border-color: #c7ccc9;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  background: var(--card);
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px var(--forest-light);
+}
+
+/* ---------------------------------- Radios & checkboxes ---------------------------------- */
+
+.student-form input[type="radio"],
+.student-form input[type="checkbox"] {
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  margin: 0 6px 0 0;
+  vertical-align: -4px;
+  border: 1.5px solid #c7ccc9;
+  background: var(--card);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.student-form input[type="radio"] {
+  border-radius: 50%;
+}
+
+.student-form input[type="checkbox"] {
+  border-radius: 5px;
+}
+
+.student-form input[type="radio"]:checked,
+.student-form input[type="checkbox"]:checked {
+  border-color: var(--forest);
+  background: var(--forest);
+}
+
+.student-form input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--card);
+}
+
+.student-form input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1.5px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--card);
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg);
+}
+
+.student-form input[type="radio"]:focus-visible,
+.student-form input[type="checkbox"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--forest-light);
+}
+
+/* radio/checkbox groups: the bare text nodes that follow each input need
+   breathing room so groups read as pill-like clusters, not a run-on line */
+.student-form input[type="radio"],
+.student-form input[type="checkbox"] {
+  margin-left: 2px;
+}
+
+.student-form input[type="radio"] + br,
+.student-form input[type="checkbox"] + br {
+  margin-top: 8px;
+}
+
+/* text immediately trailing a radio/checkbox (e.g. "Male", "HTML") */
+.student-form input[type="radio"],
+.student-form input[type="checkbox"] {
+  font-size: 14px;
+}
+
+.student-form h3 ~ label:has(+ input[type="radio"]),
+.student-form h3 ~ label:has(+ input[type="checkbox"]) {
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------- Buttons ---------------------------------- */
+
+.student-form button {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.student-form button[type="submit"] {
+  margin-top: 36px;
+  margin-right: 10px;
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid var(--ink);
+  box-shadow: 0 6px 16px -6px rgba(22, 35, 63, 0.45);
+}
+
+.student-form button[type="submit"]:hover {
+  background: var(--forest);
+  border-color: var(--forest);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -8px rgba(31, 111, 84, 0.5);
+}
+
+.student-form button[type="reset"] {
+  margin-top: 36px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.student-form button[type="reset"]:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.student-form button:active {
+  transform: translateY(0);
+}
+
+/* ---------------------------------- Responsive ---------------------------------- */
+
+@media (max-width: 640px) {
+  .student-form {
+    margin: 0;
+    padding: 32px 22px 40px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .student-form h2 {
+    font-size: 27px;
+  }
+
+  .student-form h3::before {
+    font-size: 24px;
+  }
+}
