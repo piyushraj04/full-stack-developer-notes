@@ -3405,7 +3405,7 @@ ABC=(AB+BC+CA)/2
 
 # 🎯 Final Placement Strategy
 
-Whenever you read a Time & Work question, ask yourself these **6 questions**:
+Whenever you read a Time & Work question, ask yourself these **6 questions**:-
 
 1. What is the Total Work? (Usually LCM)
 2. What is each worker's Efficiency?
