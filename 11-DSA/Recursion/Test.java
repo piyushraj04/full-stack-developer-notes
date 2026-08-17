@@ -21,17 +21,13 @@ class Test{
     }
 
     public void oneToN(int x,int n){
-        if(x==n){
-            System.out.println(x);
+        if(x>n){
+            // System.out.println(x);
             return;
         }
-        System.out.println(x);
-        oneToN(++x,n);
-         
-
-         
-           //0--> last time sooooooooooooo:-----
-       
+        
+        oneToN(x+1,n);  //0--> last time sooooooooooooo:-----
+       System.out.println(x);
     }
     public static void main(String[] args) {
         Test t = new Test();
