@@ -15,7 +15,7 @@ function LifecCycle() {
     }
   return (
     <div>
-        <h1>{cnt}</h1>
+        <h1 className='piyush'>{cnt}</h1>
         <button onClick={handleCnt}>Click</button>
     </div>
   )
