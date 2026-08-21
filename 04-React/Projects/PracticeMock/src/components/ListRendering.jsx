@@ -2,14 +2,15 @@ import React from 'react'
 
 function ListRendering() {
 const products = ["milk","egg","dairy","choco"];
-const filteredProducts = products.filter((prod)=>prod=="milk");
+const filteredProducts = products.filter((prod)=>prod=="");
 
  return(
-  filteredProducts.map((item)=>{
+  products.map((item)=>{
   switch(item){
-  case "milk" : return <h1>{item}</h1>;
+  case "milk" : return <h1>{item}</h1>
+  break;
   case "egg" : return <h1>{item}</h1>;
-  default : <h1>Wrong data...</h1>
+  default : return  <h1>Wrong data... {item}</h1>
  }
  })
  )
