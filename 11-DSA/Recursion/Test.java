@@ -25,10 +25,17 @@ class Test{
             // System.out.println(x);
             return;
         }
-        
+        System.out.println(x);
         oneToN(x+1,n);  //0--> last time sooooooooooooo:-----
-       System.out.println(x);
+    //    System.out.println(x); //---nTo1
     }
+      public void oneToN2(int n){
+        if(n==0){
+            return;
+        }
+        oneToN2(n-1);
+        System.out.println(n);
+      }
     public static void main(String[] args) {
         Test t = new Test();
         // t.printName(4); 
@@ -42,6 +49,7 @@ class Test{
         // t.nTimesX(x,n);
 
         t.oneToN(1,5);
+        // t.oneToN2(5);
         sc.close();
     }
 }
