@@ -25,6 +25,7 @@ class Test{
             // System.out.println(x);
             return;
         }
+        //ok
         System.out.println(x);
         oneToN(x+1,n);  //0--> last time sooooooooooooo:-----
     //    System.out.println(x); //---nTo1
